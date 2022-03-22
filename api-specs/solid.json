@@ -1,0 +1,1174 @@
+{
+  "x-generator": "NSwag v13.13.2.0 (NJsonSchema v10.5.2.0 (Newtonsoft.Json v13.0.0.0))",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Idp",
+    "version": "1.0.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://solidscoreapi-acc.modero.be:7008"
+    }
+  ],
+  "paths": {
+    "/company/{companyNumber}": {
+      "get": {
+        "tags": [
+          "SolidPlatform"
+        ],
+        "summary": "Get details related to the specified company number.",
+        "operationId": "SolidPlatform_Company",
+        "parameters": [
+          {
+            "name": "companyNumber",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueryResultOfCompany"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          },
+          {
+            "apikey": []
+          }
+        ]
+      }
+    },
+    "/companies": {
+      "post": {
+        "tags": [
+          "SolidPlatform"
+        ],
+        "summary": "Get details related to the specified company numbers.",
+        "operationId": "SolidPlatform_Companies",
+        "requestBody": {
+          "x-name": "companyNumbers",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueryResultOfCompany"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          },
+          {
+            "apikey": []
+          }
+        ]
+      }
+    },
+    "/company/{companyNumber}/shap": {
+      "get": {
+        "tags": [
+          "SolidPlatform"
+        ],
+        "summary": "Get the SHAP breakdown for the score calculation related to the provided company number",
+        "operationId": "SolidPlatform_CompanySHAP",
+        "parameters": [
+          {
+            "name": "companyNumber",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueryResultOfCompany"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          },
+          {
+            "apikey": []
+          }
+        ]
+      }
+    },
+    "/companies/shap": {
+      "post": {
+        "tags": [
+          "SolidPlatform"
+        ],
+        "summary": "Get the SHAP breakdown for the score calculation related to the provided company numbers",
+        "operationId": "SolidPlatform_CompaniesSHAP",
+        "requestBody": {
+          "x-name": "companyNumbers",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueryResultOfCompany"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          },
+          {
+            "apikey": []
+          }
+        ]
+      }
+    },
+    "/person/{nationalNumber}": {
+      "get": {
+        "tags": [
+          "SolidPlatform"
+        ],
+        "summary": "Get details related to the specified national number.",
+        "operationId": "SolidPlatform_Person",
+        "parameters": [
+          {
+            "name": "nationalNumber",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueryResultOfPerson"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          },
+          {
+            "apikey": []
+          }
+        ]
+      }
+    },
+    "/persons": {
+      "post": {
+        "tags": [
+          "SolidPlatform"
+        ],
+        "summary": "Get details related to the specified national numbers.",
+        "operationId": "SolidPlatform_Persons",
+        "requestBody": {
+          "x-name": "nationalNumbers",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueryResultOfPerson"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          },
+          {
+            "apikey": []
+          }
+        ]
+      }
+    },
+    "/i18n/firmtype/{language}/{id}": {
+      "post": {
+        "tags": [
+          "SolidPlatform"
+        ],
+        "summary": "Get the firmtype description in the desired language.",
+        "operationId": "SolidPlatform_FirmType",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          },
+          {
+            "apikey": []
+          }
+        ]
+      }
+    },
+    "/person/{uniqueIdentity}/score": {
+      "get": {
+        "tags": [
+          "SolidPlatform"
+        ],
+        "summary": "Gets the solid score for the person associated with the requested unique identity. If the person was not found or the call did not succeed, a 404 is returned. If the call succeeded but the model was unable to provide a sufficiently argumented score, a zero score is returned. Use other endpoints to establish which information is available (and which isn't).",
+        "operationId": "SolidPlatform_PersonScore",
+        "parameters": [
+          {
+            "name": "uniqueIdentity",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "lookup_rr",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            },
+            "x-position": 2
+          },
+          {
+            "name": "lookup_cbb",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            },
+            "x-position": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "format": "double",
+                  "nullable": true
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          },
+          {
+            "apikey": []
+          }
+        ]
+      }
+    },
+    "/company/{companyNumber}/score": {
+      "get": {
+        "tags": [
+          "SolidPlatform"
+        ],
+        "summary": "Gets the solid score for the company associated with the requested company number. If the company was not found or the call did not succeed, a 404 is returned. If the call succeeded but the model was unable to provide a sufficiently argumented score, a zero score is returned. Use other endpoints to establish which information is available (and which isn't).",
+        "operationId": "SolidPlatform_CompanyScore",
+        "parameters": [
+          {
+            "name": "companyNumber",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "lookup_cbb",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "format": "double",
+                  "nullable": true
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          },
+          {
+            "apikey": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "QueryResultOfCompany": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/QueryDataOfCompany"
+              }
+            ]
+          }
+        }
+      },
+      "QueryDataOfCompany": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "results": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/Company"
+            }
+          }
+        }
+      },
+      "Company": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Entity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "companyNumber": {
+                "type": "string",
+                "nullable": true
+              },
+              "financialEntries": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/IFinancialEntry"
+                }
+              },
+              "financialSummaries": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/FinancialSummary"
+                }
+              },
+              "seizureState": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/SeizureState"
+                  }
+                ]
+              },
+              "solvencyAttributes": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/SolvencyAttribute"
+                }
+              },
+              "officialProfile": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/OfficialProfile"
+                  }
+                ]
+              },
+              "summary": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/CompanySummary"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "IFinancialEntry": {
+        "type": "object",
+        "x-abstract": true,
+        "additionalProperties": false,
+        "properties": {
+          "filingDate": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "FinancialSummary": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "fiscalYear": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "turnover": {
+            "type": "number",
+            "format": "float"
+          },
+          "addedValue": {
+            "type": "number",
+            "format": "float"
+          },
+          "profitLoss": {
+            "type": "number",
+            "format": "float"
+          },
+          "cashFlow": {
+            "type": "number",
+            "format": "float"
+          },
+          "ownCapital": {
+            "type": "number",
+            "format": "float"
+          },
+          "ownInput": {
+            "type": "number",
+            "format": "float"
+          },
+          "netCapital": {
+            "type": "number",
+            "format": "float"
+          },
+          "ebit": {
+            "type": "number",
+            "format": "float"
+          },
+          "ebitda": {
+            "type": "number",
+            "format": "float"
+          }
+        }
+      },
+      "SeizureState": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "order": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "executiveSeizureThirdParty": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "executiveSeizureJudicialOfficer": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "executiveSeizureOrder": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "SolvencyAttribute": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "impact": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "requestId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "value": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "attributeType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "OfficialProfile": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "legalForm": {
+            "type": "string",
+            "nullable": true
+          },
+          "establishedDate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "legalSituationCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "companyType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deletedState": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deletedDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "deletedHistory": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "naceCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "department": {
+            "type": "string",
+            "nullable": true
+          },
+          "sectorCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "naceGroup": {
+            "type": "string",
+            "nullable": true
+          },
+          "legalFormDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "nacebelHistory": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/NacebelHistoryEntry"
+            }
+          },
+          "zip": {
+            "type": "string",
+            "nullable": true
+          },
+          "pFileFirmTypeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankrupcyFlagAmount0": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "bankrupcyFlagAmount1": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "bankrupcyFlagAmountTotal": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "bankrupcyFlagAmountRatio": {
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          }
+        }
+      },
+      "NacebelHistoryEntry": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "nacebelCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "begin": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "end": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdDate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "modifiedDate": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "CompanySummary": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "commercialName": {
+            "type": "string",
+            "nullable": true
+          },
+          "cachedSolvabilityScore": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "cachedSolvabilityScoreDate": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Entity": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/IdentifiedEntity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "addresses": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/Address"
+                }
+              },
+              "relations": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/Relation"
+                }
+              },
+              "comms": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/CommunicationChannel"
+                }
+              },
+              "legalInformationActual": {
+                "type": "boolean"
+              },
+              "predictionModelData": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/PredictionModelData"
+                  }
+                ]
+              },
+              "status": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          }
+        ]
+      },
+      "Address": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "street": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "housenumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "zipcode": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "boxnumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "arrondissement": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateDomiciled": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Relation": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relationType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "capacity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "relationIdentifier": {
+            "type": "string",
+            "nullable": true
+          },
+          "parentIdentifier": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "CommunicationChannel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "primary": {
+            "type": "boolean"
+          },
+          "preferred": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PredictionModelData": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "solvabilityPrediction": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PredictionModelEntry"
+              }
+            ]
+          },
+          "shapEntries": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/PredictionModelSHAPEntry"
+            }
+          }
+        }
+      },
+      "PredictionModelEntry": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "number",
+            "format": "double"
+          },
+          "class": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "PredictionModelSHAPEntry": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "component": {
+            "type": "string",
+            "nullable": true
+          },
+          "impact": {
+            "type": "number",
+            "format": "decimal"
+          }
+        }
+      },
+      "IdentifiedEntity": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "QueryResultOfPerson": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/QueryDataOfPerson"
+              }
+            ]
+          }
+        }
+      },
+      "QueryDataOfPerson": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "results": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/Person"
+            }
+          }
+        }
+      },
+      "Person": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Entity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "solvencyAttributes": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/SolvencyAttribute"
+                }
+              },
+              "nationalIdentity": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/NationalRegistryEntry"
+                  }
+                ]
+              },
+              "details": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/PersonDetails"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "NationalRegistryEntry": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Lookup"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "uniqueIdentity": {
+                "type": "string",
+                "nullable": true
+              },
+              "personFoundInRr": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
+      "Lookup": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "language": {
+            "type": "string",
+            "nullable": true
+          },
+          "zipCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "streetName": {
+            "type": "string",
+            "nullable": true
+          },
+          "houseNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "box": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "birthDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "lookupId": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyNmbr": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "PersonDetails": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "nonVerifiedUniqueIdentity": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastChange": {
+            "type": "string",
+            "nullable": true
+          },
+          "solvabilityTypeId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "authorizationUrl": "https://web.modero.be/auth/realms/Kaspar/protocol/openid-connect/auth",
+            "tokenUrl": "https://web.modero.be/auth/realms/Kaspar/protocol/openid-connect/token",
+            "scopes": {
+              "openid": "OpenID scheme"
+            }
+          }
+        }
+      },
+      "apikey": {
+        "type": "apiKey",
+        "description": "Basic API key in the HTTP header",
+        "name": "Api-Key",
+        "in": "header"
+      }
+    }
+  }
+}
